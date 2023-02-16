@@ -1,0 +1,97 @@
+/* CSS for the entire page */
+.body {
+    background-color: #000;
+    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* CSS for the header */
+.h1 {
+    font-size: 3rem;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+/* CSS for the form */
+.form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* CSS for the skill points */
+.p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+/* CSS for the attributes */
+.h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+.label {
+    display: block;
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem;
+}
+
+.input {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: 2px solid #f00;
+    border-radius: 5px;
+    background-color: #300;
+    color: #fff;
+    margin: 0.5rem 0;
+}
+
+/* CSS for the status */
+.p {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.button {
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    border: 2px solid #f00;
+    border-radius: 5px;
+    background-color: #300;
+    color: #fff;
+    margin: 0.5rem;
+}
+
+/* CSS for the inventory */
+.ul {
+    font-size: 1.2rem;
+    margin: 1rem 0;
+}
+
+.li {
+    margin: 0.5rem 0;
+}
+
+/* CSS for the gold */
+.h2 {
+    font-size: 2rem;
+    margin: 2rem 0 1rem;
+}
+
+/* CSS for the logout button */
+.logoutButton {
+    margin-top: 2rem;
+}
+
+.attributeContainer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.attributeColumn {
+    flex: 1;
+}
+
+.skillPoints {
+    color: red;
+  }

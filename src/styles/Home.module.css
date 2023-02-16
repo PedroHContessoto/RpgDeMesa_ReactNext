@@ -1,0 +1,71 @@
+.container {
+  padding: 0 2rem;
+
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-image: url('https://i.blogs.es/f00f9c/visa/450_1000.webp');
+  background-size: cover;
+  background-position: center;
+}
+
+.title a {
+  color: #ff0000;
+  text-decoration: none;
+}
+
+.title a:hover,
+.title a:focus,
+.title a:active {
+  color: #ff9191;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-shadow: 1px 1px #222222;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.title,
+.description {
+  text-align: center;
+  color: #f85656;
+}
+
+.description {
+  margin: 0rem 0rem 0rem 0rem;
+  line-height: 1.5;
+  font-size: 1.5rem;
+  text-shadow: 1px 1px #222222;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.descriptions {
+  color: #ff0000;
+}
+
+.code {
+  background-color: #f3abab;
+  color: #ff9191;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
+}
+
+.a {
+  color: #ff9191;
+}
+
+.a:hover,
+.a:focus,
+.a:active {
+  color: #ff0000;
+}

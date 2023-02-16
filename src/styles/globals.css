@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Monoton&display=swap');
+
+* {
+    -webkit-font-smoothing: antialiased !important;
+    color: #a70707;
+}
+
+body {
+    background-color: #272626 !important;
+}
+
+s h1 {
+    font-size: 4rem !important;
+    line-height: 4.3rem !important;
+    letter-spacing: -0.05em !important;
+    font-weight: 700 !important;
+    color: #ff4136;
+    text-shadow: 2px 2px #000;
+}
+
+.nav-link.active {
+    color: #ff4136 !important;
+    font-weight: 500;
+}
+
+.list-h1 {
+    font-size: 2.5rem !important;
+    line-height: 3.5rem !important;
+    letter-spacing: -0.05em !important;
+    font-weight: 600 !important;
+    color: #ff4136;
+    text-shadow: 2px 2px #000;
+}
+
+.gradient {
+    padding: 1.0rem;
+    font-size: 5rem !important;
+    color: #ff4136 !important;
+    background: linear-gradient(90deg, #ff4136 0%, #5e0a0a 99.92%) !important;
+    -webkit-background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    text-shadow: 2px 2px #000;
+}
+
+.image {
+    border-radius: 15px !important;
+    overflow: hidden;
+    box-shadow: 2px 2px 10px #000;
+}
+
+.dropdown-item.active,
+.dropdown-item:active {
+    background-color: #292929 !important;
+    color: #e6e6e6 !important;
+    text-shadow: 2px 2px #000;
+}
+
+.form-check-input:checked {
+    background-color: #ff4136 !important;
+    border-color: #e05f00 !important;
+}
+
+.page-link {
+    color: #e6e6e6 !important;
+}
+
+.active>.page-link,
+.page-link.active {
+    color: #000000 !important;
+    background-color: #ff4136 !important
+}
+
+button {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 25px;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    background-color: #ff4136;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    transition: all 0.2s ease-in-out;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #e05f00;
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+}

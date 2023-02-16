@@ -1,0 +1,36 @@
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-size: 1.2rem;
+    background-color: #292929;
+    color: #ffffff;
+    }
+    
+    .h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 1px #000000;
+    }
+    
+    .p {
+    margin: 15px 0;
+    }
+    
+    .strong {
+    font-weight: bold;
+    color: #ff6666;
+    }
+    
+    /* Efeitos de hover nos links */
+    .a {
+    color: #ffffff;
+    text-decoration: none;
+    border-bottom: 1px solid #ff6666;
+    transition: all 0.2s ease-in-out;
+    }
+    
+    .a:hover {
+    border-bottom: 2px solid #ff6666;
+    text-shadow: 1px 1px 1px #000000;
+    }
