@@ -26,5 +26,9 @@
     "react-router-dom": "^6.8.0",
     "safe-buffer": "^5.2.1",
     "styled-components": "^5.3.6"
-  }
+  },
+  "main": "index.js",
+  "repository": "https://github.com/PedroHContessoto/RpgDeMesa_ReactNext.git",
+  "author": "Pedro-Contessoto-Madeira <pedro.contessoto@madeiramadeira.com.br>",
+  "license": "MIT"
 }

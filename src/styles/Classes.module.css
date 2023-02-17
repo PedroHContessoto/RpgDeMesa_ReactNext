@@ -5,32 +5,81 @@
     font-size: 1.2rem;
     background-color: #292929;
     color: #ffffff;
-    }
-    
-    .h2 {
+}
+
+.pergaminho {
+    position: relative;
+    background-color: #f3e3c3;
+    padding: 30px;
+    margin: 30px 0;
+    box-shadow: 5px 5px 5px #000000;
+    border: 2px solid #000000;
+    border-radius: 20px;
+}
+
+.pergaminho:before {
+    content: "";
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.pergaminho:after {
+    content: "";
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 50px;
+    height: 50px;
+
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 2;
+}
+
+.pergaminho .h2 {
     font-size: 2.5rem;
     margin-bottom: 20px;
     text-shadow: 1px 1px 1px #000000;
-    }
-    
-    .p {
+    color: #9e543e;
+}
+
+.pergaminho .p {
     margin: 15px 0;
-    }
-    
-    .strong {
+    text-shadow: 1px 1px 1px #000;
+    color: #61453c;
+}
+
+.pergaminho .strong {
     font-weight: bold;
-    color: #ff6666;
-    }
-    
-    /* Efeitos de hover nos links */
-    .a {
-    color: #ffffff;
+    color: #d43c3c;
+}
+
+.pergaminho .a {
+    color: #9e543e;
     text-decoration: none;
-    border-bottom: 1px solid #ff6666;
+    border-bottom: 1px solid #d43c3c;
     transition: all 0.2s ease-in-out;
-    }
-    
-    .a:hover {
-    border-bottom: 2px solid #ff6666;
+}
+
+.pergaminho .a:hover {
+    border-bottom: 2px solid #d43c3c;
     text-shadow: 1px 1px 1px #000000;
-    }
+}
+
+.pergaminho .papiro {
+    position: absolute;
+    top: -20px;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}

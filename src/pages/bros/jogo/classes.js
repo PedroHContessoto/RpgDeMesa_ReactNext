@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styles from '../../../styles/Classes.module.css';
 
+
 const classes = [
     {
         name: 'Cultista',
@@ -42,7 +43,7 @@ function Classes() {
     return (
         <div className={styles.container}>
             {classes.map((cls) => (
-                <div key={cls.name}>
+                <div key={cls.name} className={styles.pergaminho}>
                     <h2 className={styles.h2}>{cls.name}</h2>
                     <p className={styles.p}>{cls.description}</p>
                     <p className={styles.p}><strong className={styles.strong}>Forças:</strong> {cls.strengths}</p>

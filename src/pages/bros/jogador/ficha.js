@@ -3,24 +3,31 @@ import Head from 'next/head';
 import { Container, Row, Col, Form, FormControl, Button } from 'react-bootstrap';
 import Router from "next/router"
 import styles from '../../../styles/Ficha.module.css'
-import { AuthContext } from "@/contexts/AuthContext";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import Cookies from 'js-cookie';
+import LayoutBros from "@/components/layout/bros";
 
-const Ficha = () => {
+
+
+Ficha.getLayout = function getLayout(page) {
+  return <LayoutBros>{page}</LayoutBros>;
+};
+
+
+export default function Ficha() {
   const [strength, setStrength] = useState(0);
   const [agility, setAgility] = useState(0);
   const [intelligence, setIntelligence] = useState(0);
   const [charisma, setCharisma] = useState(0);
   const [health, setHealth] = useState(100);
-  const [mana, setMana] = useState(0);
+  const [mana, setMana] = useState(100);
   const [experience, setExperience] = useState(0);
   const [level, setLevel] = useState(1);
   const [inventory, setInventory] = useState([]);
   const [text, setText] = useState('');
   const [gold, setGold] = useState(0);
-  const [skillPoints, setSkillPoints] = useState(0);
+  const [skillPoints, setSkillPoints] = useState(5);
 
-  const { isAuthenticated } = useContext(AuthContext);
 
   const [inputsChanged, setInputsChanged] = useState(false);
 
@@ -170,8 +177,8 @@ const Ficha = () => {
   }
 
   const handleLogout = () => {
-    localStorage.clear();
-    Router.push('/login');
+    Cookies.remove('bros.token');
+    Router.push('forasteiro/login');
   };
   const handleIncreaseHealth = (event) => {
     event.preventDefault();
@@ -300,8 +307,3 @@ const Ficha = () => {
     </>
   );
 }
-
-
-
-
-export default Ficha;
