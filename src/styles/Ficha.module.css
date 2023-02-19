@@ -2,14 +2,14 @@
 .body {
     background-color: #000;
     color: #fff;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'Creepster', cursive;
 }
 
 /* CSS for the header */
 .h1 {
     font-size: 3rem;
     text-align: center;
-    margin: 2rem 0;
+    text-shadow: 2px 2px #c0392b;
 }
 
 /* CSS for the form */
@@ -28,6 +28,7 @@
 .h2 {
     font-size: 2rem;
     margin: 2rem 0 1rem;
+    font-family: 'Chiller', cursive;
 }
 
 .label {
@@ -44,6 +45,7 @@
     background-color: #300;
     color: #fff;
     margin: 0.5rem 0;
+    font-family: 'Nosifer', cursive;
 }
 
 /* CSS for the status */
@@ -60,6 +62,7 @@
     background-color: #300;
     color: #fff;
     margin: 0.5rem;
+    font-family: 'Creepster', cursive;
 }
 
 /* CSS for the inventory */
@@ -70,17 +73,20 @@
 
 .li {
     margin: 0.5rem 0;
+    font-family: 'Cinzel Decorative', cursive;
 }
 
 /* CSS for the gold */
 .h2 {
     font-size: 2rem;
     margin: 2rem 0 1rem;
+    font-family: 'Chiller', cursive;
 }
 
 /* CSS for the logout button */
 .logoutButton {
     margin-top: 2rem;
+    font-family: 'Chiller', cursive;
 }
 
 .attributeContainer {
@@ -94,4 +100,5 @@
 
 .skillPoints {
     color: red;
-  }
+    font-family: 'Nosifer', cursive;
+}

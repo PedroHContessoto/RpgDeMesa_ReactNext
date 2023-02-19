@@ -1,0 +1,113 @@
+.container {
+  position: relative;
+}
+
+.logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 60px;
+  font-size: 2rem;
+  color: #fff;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.menu-container {
+  padding: 20px;
+}
+
+.menu {
+  position: relative;
+  padding: 10px 0;
+  font-size: 1.2rem;
+  color: #fff;
+  cursor: pointer;
+  border-top: 1px solid #ff4500;
+}
+
+.menu:first-child {
+  border-top: none;
+}
+
+.submenu {
+  margin: 10px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.submenu li {
+  padding: 5px 0;
+  font-size: 1rem;
+  border-bottom: 1px solid #ff4500;
+}
+
+.submenu li:last-child {
+  border-bottom: none;
+}
+
+.submenu li a {
+  display: block;
+  padding: 5px;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 1rem;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.submenu li a:hover {
+  background-color: #ff4500;
+}
+
+.sidebar-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 100vh;
+  background-color: #222;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  transform: translateX(-300px);
+  transition: transform 0.2s ease;
+  z-index: 999;
+}
+
+.sidebar-open {
+  transform: translateX(0);
+}
+
+.sidebar-container button.toggle-button {
+  position: absolute;
+  top: 20px;
+  right: -30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: #fff;
+  border: none;
+  cursor: pointer;
+  transform: translateX(-100%);
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+.sidebar-container.sidebar-open button.toggle-button {
+  transform: translateX(0%);
+}
+
+.toggle-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 20px;
+  background: #a31800;
+  border: none;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}

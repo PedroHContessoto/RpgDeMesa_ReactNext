@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styles from '../../../styles/Classes.module.css';
-
+import BrosSideBar from '@/components/sidebar';
 
 const classes = [
     {
@@ -42,6 +42,7 @@ const classes = [
 function Classes() {
     return (
         <div className={styles.container}>
+        <BrosSideBar/>
             {classes.map((cls) => (
                 <div key={cls.name} className={styles.pergaminho}>
                     <h2 className={styles.h2}>{cls.name}</h2>

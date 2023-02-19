@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react';
-import SideBar from "../../../components/sideBar";
 import styles from '../../../styles/Loja.module.css'
+import BrosSideBar from '@/components/sidebar';
 
 export default function PageLojaDoJogo() {
     const [gold, setGold] = useState(0);
@@ -45,6 +45,7 @@ export default function PageLojaDoJogo() {
 
     return (
         <div className={styles.storeContainer}>
+        <BrosSideBar/>
             <h1 className={styles.storeTitle}>Loja de RPG de terror</h1>
             <h2 className={styles.storeSubtitle}>Ouro : {gold}</h2>
             <h2 className={styles.storeSubtitle}>Armas leves</h2>

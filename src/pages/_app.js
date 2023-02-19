@@ -1,7 +1,6 @@
 import Script from "next/script";
 import Head from "next/head";
 import "../styles/globals.css";
-import "../styles/sidebar.css";
 import "../styles/dropdown.css";
 import "../styles/icones.css";
 import 'bootstrap/dist/css/bootstrap.css'
