@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
 import styles from '../../../styles/Loja.module.css'
 import BrosSideBar from '@/components/sidebar';
+import Head from 'next/head';
 
 export default function PageLojaDoJogo() {
     const [gold, setGold] = useState(0);
@@ -20,7 +21,7 @@ export default function PageLojaDoJogo() {
         { name: "Poção de invisibilidade", category: "Poção", price: 25, photo: null },
         { name: "Anel de invisibilidade", category: "Acessório", price: 50, photo: null },
         { name: "Amuleto da sorte", category: "Acessório", price: 10, photo: null }
-      ];
+    ];
 
     function handleBuy(item) {
         if (gold >= item.price) {
@@ -44,48 +45,55 @@ export default function PageLojaDoJogo() {
 
 
     return (
-        <div className={styles.storeContainer}>
-        <BrosSideBar/>
-            <h1 className={styles.storeTitle}>Loja de RPG de terror</h1>
-            <h2 className={styles.storeSubtitle}>Ouro : {gold}</h2>
-            <h2 className={styles.storeSubtitle}>Armas leves</h2>
-            <ul className={styles.storeList}>
-                {items
-                    .filter((item) => item.category === "Arma leve")
-                    .map((item) => (
-                        <li key={item.name} className={styles.storeItem}>
-                            <div className={styles.storeItemPhoto}><img src={item.photo} alt={item.name} /></div>
-                            <div className={styles.storeItemName}>{item.name}</div>
-                            <div className={styles.storeItemPrice}>R${item.price}</div>
-                            <button className={styles.button} onClick={() => handleBuy(item)}>Comprar</button>
-                        </li>
-                    ))}
-            </ul>
-            <h2 className={styles.storeSubtitle}>Armas médias</h2>
-            <ul className={styles.storeList}>
-                {items
-                    .filter((item) => item.category === "Arma média")
-                    .map((item) => (
-                        <li key={item.name} className={styles.storeItem}>
-                            <div className={styles.storeItemPhoto}><img src={item.photo} alt={item.name} /></div>
-                            <div className={styles.storeItemName}>{item.name}</div>
-                            <div className={styles.storeItemPrice}>R${item.price}</div>
-                            <button className={styles.button} onClick={() => handleBuy(item)}>Comprar</button>
-                        </li>
-                    ))}
-            </ul>
-            <h2 className={styles.storeSubtitle}>Armas pesadas</h2>
-            <ul className={styles.storeList}>
-                {items
-                    .filter((item) => item.category === "Arma pesada")
-                    .map((item) => (
-                        <li key={item.name} className={styles.storeItem}>
-                            <div className={styles.storeItemPhoto}><img src={item.photo} alt={item.name} /></div>
-                            <div className={styles.storeItemName}>{item.name}</div>
-                            <div className={styles.storeItemPrice}>R${item.price}</div>
-                            <button className={styles.button} onClick={() => handleBuy(item)}>Comprar</button>
-                        </li>
-                    ))}
-            </ul>
-        </div>)
+        <>
+            <div className={styles.storeContainer}>
+                <Head>
+                    <title>Loja</title>
+                    <link rel="icon
+    do projeto" href="/favicon.ico" />
+                </Head>
+                <BrosSideBar />
+                <h1 className={styles.storeTitle}>Loja de RPG de terror</h1>
+                <h2 className={styles.storeSubtitle}>Ouro : {gold}</h2>
+                <h2 className={styles.storeSubtitle}>Armas leves</h2>
+                <ul className={styles.storeList}>
+                    {items
+                        .filter((item) => item.category === "Arma leve")
+                        .map((item) => (
+                            <li key={item.name} className={styles.storeItem}>
+                                <div className={styles.storeItemPhoto}><img src={item.photo} alt={item.name} /></div>
+                                <div className={styles.storeItemName}>{item.name}</div>
+                                <div className={styles.storeItemPrice}>R${item.price}</div>
+                                <button className={styles.button} onClick={() => handleBuy(item)}>Comprar</button>
+                            </li>
+                        ))}
+                </ul>
+                <h2 className={styles.storeSubtitle}>Armas médias</h2>
+                <ul className={styles.storeList}>
+                    {items
+                        .filter((item) => item.category === "Arma média")
+                        .map((item) => (
+                            <li key={item.name} className={styles.storeItem}>
+                                <div className={styles.storeItemPhoto}><img src={item.photo} alt={item.name} /></div>
+                                <div className={styles.storeItemName}>{item.name}</div>
+                                <div className={styles.storeItemPrice}>R${item.price}</div>
+                                <button className={styles.button} onClick={() => handleBuy(item)}>Comprar</button>
+                            </li>
+                        ))}
+                </ul>
+                <h2 className={styles.storeSubtitle}>Armas pesadas</h2>
+                <ul className={styles.storeList}>
+                    {items
+                        .filter((item) => item.category === "Arma pesada")
+                        .map((item) => (
+                            <li key={item.name} className={styles.storeItem}>
+                                <div className={styles.storeItemPhoto}><img src={item.photo} alt={item.name} /></div>
+                                <div className={styles.storeItemName}>{item.name}</div>
+                                <div className={styles.storeItemPrice}>R${item.price}</div>
+                                <button className={styles.button} onClick={() => handleBuy(item)}>Comprar</button>
+                            </li>
+                        ))}
+                </ul>
+            </div>
+        </>)
 }

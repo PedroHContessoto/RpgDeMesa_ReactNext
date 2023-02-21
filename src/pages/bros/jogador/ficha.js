@@ -6,6 +6,7 @@ import styles from '../../../styles/Ficha.module.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Cookies from 'js-cookie';
 import BrosSideBar from '@/components/sidebar';
+import magias from '@/components/info/magias'
 
 
 
@@ -22,7 +23,7 @@ export default function Ficha() {
   const [text, setText] = useState('');
   const [gold, setGold] = useState(0);
   const [skillPoints, setSkillPoints] = useState(5);
-
+  const [playerClass, setPlayerClass] = useState('');
 
   const [inputsChanged, setInputsChanged] = useState(false);
 
@@ -199,6 +200,53 @@ export default function Ficha() {
     setInputsChanged(true);
   };
 
+  const handleClassChange = (event) => {
+    const selectedClass = event.target.value;
+
+    // verificar se o usuário já selecionou uma classe antes
+    // se sim, não permita que ele selecione outra classe
+    if (localStorage.getItem('playerClass') !== null) {
+      return;
+    }
+
+    // atualiza o estado da classe
+    setPlayerClass(selectedClass);
+    // atualiza os atributos do personagem com base na classe selecionada
+    if (selectedClass === 'Cultista') {
+      setStrength(strength + 1);
+      setAgility(agility + 1);
+      setIntelligence(intelligence + 3);
+      setCharisma(charisma + 2);
+      setInputsChanged(true);
+    } else if (selectedClass === 'Caçador') {
+      setStrength(strength + 3);
+      setAgility(agility + 3);
+      setIntelligence(intelligence + 1);
+      setCharisma(charisma + 1);
+      setInputsChanged(true);
+    } else if (selectedClass === 'Médium') {
+      setStrength(strength + 1);
+      setAgility(agility + 1);
+      setIntelligence(intelligence + 4);
+      setCharisma(charisma + 1);
+      setInputsChanged(true);
+    } else if (selectedClass === 'Necromante') {
+      setStrength(strength + 1);
+      setAgility(agility + 1);
+      setIntelligence(intelligence + 4);
+      setCharisma(charisma + 1);
+      setInputsChanged(true);
+    } else if (selectedClass === 'Assassino') {
+      setStrength(strength + 2);
+      setAgility(agility + 5);
+      setIntelligence(intelligence + 1);
+      setCharisma(charisma + 1);
+      setInputsChanged(true);
+    }
+    // salva a classe selecionada no localStorage
+    localStorage.setItem('playerClass', selectedClass);
+  };
+
 
 
   return (
@@ -208,96 +256,104 @@ export default function Ficha() {
         <link rel="icon
     do projeto" href="/favicon.ico" />
       </Head>
-      <BrosSideBar/>
+      <BrosSideBar />
       <main className={styles.body}>
-          <h1 className={styles.h1}>Ficha do Personagem</h1>
-          <form className={styles.form}>
-            <h2 className={styles.h2}>Pontos de Abilidade : {skillPoints}</h2>
-            <div className={styles.attributeContainer}>
-              <div className={styles.attributeColumn}>
-                <h2 className={styles.h2}>Atributos</h2>
-                <label htmlFor="strength" className={styles.label}>Força:</label>
-                <input
-                  type="number"
-                  id="strength"
-                  name="strength"
-                  value={strength}
-                  onChange={(event) => handleInputChange(event, setStrength)}
-                  className={styles.input}
-                />
-                <br />
-                <label htmlFor="agility" className={styles.label}>Agilidade:</label>
-                <input
-                  type="number"
-                  id="agility"
-                  name="agility"
-                  value={agility}
-                  onChange={(event) => handleInputChange(event, setAgility)}
-                  className={styles.input}
-                />
-                <br />
-                <label htmlFor="intelligence" className={styles.label}>Inteligência:</label>
-                <input
-                  type="number"
-                  id="intelligence"
-                  name="intelligence"
-                  value={intelligence}
-                  onChange={(event) => handleInputChange(event, setIntelligence)}
-                  className={styles.input}
-                />
-                <br />
-                <label htmlFor="charisma" className={styles.label}>Carisma:</label>
-                <input
-                  type="number"
-                  id="charisma"
-                  name="charisma"
-                  value={charisma}
-                  onChange={(event) => handleInputChange(event, setCharisma)}
-                  className={styles.input}
-                />
-                <br />
-              </div>
-              <div className={styles.attributeColumn}>
-                <h2 className={styles.h2}>Status</h2>
-                <p className={styles.p}>Vida: {health}</p>
-                <button onClick={handleIncreaseHealth} className={styles.button}>Aumentar</button>
-                <button onClick={handleDecreaseHealth} className={styles.button}>Diminuir</button>
-
-                <p className={styles.p}>Mana: {mana}</p>
-                <button onClick={handleIncreaseMana} className={styles.button}>Aumentar</button>
-                <button onClick={handleDecreaseMana} className={styles.button}>Diminuir</button>
-
-                <p className={styles.p}>Experiência: {experience}</p>
-                {experience >= 100 ?
-                  (<button onClick={handleLevelUp} className={styles.button}>Subir de nível</button>) :
-                  (<button onClick={handleGainExperience} className={styles.button}>Ganhar experiência</button>)
-                }
-                <p className={styles.p}>Nível: {level}</p>
-              </div>
+        <h1 className={styles.h1}>Ficha do Personagem</h1>
+        <form className={styles.form}>
+          <h2 className={styles.h2}>Pontos de Abilidade : {skillPoints}</h2>
+          <div className={styles.attributeContainer}>
+            <div className={styles.attributeColumn}>
+              <h2 className={styles.h2}>Atributos</h2>
+              <label htmlFor="strength" className={styles.label}>Força:</label>
+              <input
+                type="number"
+                id="strength"
+                name="strength"
+                value={strength}
+                onChange={(event) => handleInputChange(event, setStrength)}
+                className={styles.input}
+              />
+              <br />
+              <label htmlFor="agility" className={styles.label}>Agilidade:</label>
+              <input
+                type="number"
+                id="agility"
+                name="agility"
+                value={agility}
+                onChange={(event) => handleInputChange(event, setAgility)}
+                className={styles.input}
+              />
+              <br />
+              <label htmlFor="intelligence" className={styles.label}>Inteligência:</label>
+              <input
+                type="number"
+                id="intelligence"
+                name="intelligence"
+                value={intelligence}
+                onChange={(event) => handleInputChange(event, setIntelligence)}
+                className={styles.input}
+              />
+              <br />
+              <label htmlFor="charisma" className={styles.label}>Carisma:</label>
+              <input
+                type="number"
+                id="charisma"
+                name="charisma"
+                value={charisma}
+                onChange={(event) => handleInputChange(event, setCharisma)}
+                className={styles.input}
+              />
+              <br />
             </div>
+            <div className={styles.attributeColumn}>
+              <h2 className={styles.h2}>Status</h2>
+              <p className={styles.p}>Vida: {health}</p>
+              <button onClick={handleIncreaseHealth} className={styles.button}>Aumentar</button>
+              <button onClick={handleDecreaseHealth} className={styles.button}>Diminuir</button>
 
-            <div className={styles.inventoryContainer}>
-              <div className={styles.inventoryColumn}>
-                <h2 className={styles.h2}>Inventário</h2>
-                <ul className={styles.ul}>
-                  {inventory.map((item, index) => (
-                    <li key={index} className={styles.li}>
-                      {item}
-                      <button onClick={(event) => handleRemoveFromInventory(event, index)} className={styles.button}>Remover</button>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className={styles.inventoryColumn}>
-                <h2 className={styles.h2}>Ouro</h2>
-                <p>Ouro: {gold}</p>
-                <button onClick={handleAddGold} className={styles.button}>Adicionar ouro</button>
+              <p className={styles.p}>Mana: {mana}</p>
+              <button onClick={handleIncreaseMana} className={styles.button}>Aumentar</button>
+              <button onClick={handleDecreaseMana} className={styles.button}>Diminuir</button>
 
-                <button onClick={handleRemoveGold} className={styles.button}>Remover ouro</button>
-                <button onClick={handleLogout} className={styles.logoutButton}>Sair</button>
-              </div>
+              <p className={styles.p}>Experiência: {experience}</p>
+              <p className={styles.p}>Nível: {level}</p>
             </div>
-          </form>
+          </div>
+
+          <h2 className={styles.h2}>Classe: </h2>
+          <select
+            id="class"
+            name="class"
+            className={`${styles.select} input`}
+            onClick={handleClassChange}
+            onChange={(e) => setPlayerClass(e.target.value)}
+          >
+            {['Cultista', 'Caçador', 'Médium', 'Necromante', 'Assassino'].map((classObj) => (
+              <option key={classObj} value={classObj}>
+                {classObj}
+              </option>
+            ))}
+          </select>
+
+          <div className={styles.inventoryContainer}>
+            <div className={styles.inventoryColumn}>
+              <h2 className={styles.h2}>Inventário</h2>
+              <ul className={styles.ul}>
+                {inventory.map((item, index) => (
+                  <li key={index} className={styles.li}>
+                    {item}
+                    <button onClick={(event) => handleRemoveFromInventory(event, index)} className={styles.button}>Remover</button>
+                  </li>
+                ))}
+              </ul>
+            </div>
+            <div className={styles.inventoryColumn}>
+              <h2 className={styles.h2}>Ouro</h2>
+              <p>Ouro: {gold}</p>
+              <button onClick={handleLogout} className={styles.logoutButton}>Sair</button>
+            </div>
+          </div>
+        </form>
       </main>
     </div>
   );

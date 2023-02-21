@@ -1,0 +1,76 @@
+/* Defina um background assustador */
+.body {
+    background-color: #1c1c1c;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    font-family: 'Courier New', Courier, monospace;
+    color: #fff;
+    
+}
+
+/* Centralize o conteúdo na página */
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 0 20px;
+}
+
+
+/* Estilize o título */
+.h1 {
+    font-size: 3rem;
+    margin: 0 0 20px;
+    text-align: center;
+}
+
+/* Estilize o formulário */
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+/* Estilize a label */
+.label {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+/* Estilize o input */
+.input {
+    font-size: 1.2rem;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+}
+
+/* Estilize o botão */
+.button {
+    font-size: 1.2rem;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    background-color: #bf0e0e;
+    color: #fff;
+}
+
+.button:hover {
+    background-color: #ff0000;
+}
+
+/* Estilize o parágrafo que mostra o conteúdo desbloqueado */
+.p {
+    font-size: 1.2rem;
+    text-align: center;
+    margin-bottom: 20px;
+}
